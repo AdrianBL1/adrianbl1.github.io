@@ -1,23 +1,122 @@
 body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
     background-color: #008080;
+    color: black;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.iconos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    margin: 10px;
+}
+
+.icono {
+    font-size: 8pt;
+    text-align: center;
+    color: white;
+    border: 1px solid transparent;
+}
+
+.icono:hover {
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    color: black;
+    /* min-height: 100vh; */
 }
 
 .window {
     width: 300px;
+    position: absolute;
 }
 
 .logos {
     text-align: center;
 }
 
-a {
-  text-decoration: none;
-  color: #000;
-  text-shadow: none;
+img {
+    max-width: 80%;
+}
+
+.win98-footer {
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid #808080;
+    /* Windows 98 border color */
+}
+
+.win98-footer p {
+    margin: 0;
+}
+
+#win98-clock {
+    font-weight: bold;
+    letter-spacing: 5px;
+    width: 100px;
+}
+
+
+/**/
+.contenido-perfil {
+    display: flex;
+}
+
+.perfil-lista {
+    list-style: none;
+    margin: 0 50px 0 0;
+    padding: 0;
+}
+
+.perfil-lista li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.perfil-avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.perfil-avatar img {
+    width: 40px;
+    height: 40px;
+}
+
+.perfil-subcontenido {
+    display: grid;
+}
+
+.perfil-nombre {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.perfil-bio {
+    font-size: 14px;
 }

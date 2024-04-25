@@ -6,61 +6,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/98.css" />
     <title>Adrian BL</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" media="all">
+    <!-- <link rel="stylesheet" href="assets/css/debug.css"> -->
+    <script src="https://unpkg.com/webamp@1.4.2/built/webamp.bundle.min.js"></script>
+    <script src="assets/js/index.js"></script>
+    <script src="assets/js/indexUI.js"></script>
+    <script src="assets/js/indexControler.js"></script>
 </head>
 
 <body>
-    <div class="window">
-        <div class="title-bar">
-            <div class="title-bar-text">Ventana de Bienvenida</div>
-            <div class="title-bar-controls">
-                <button aria-label="Minimize"></button>
-                <button aria-label="Maximize"></button>
-                <button aria-label="Close"></button>
+    <div id="app_webamp"></div>
+    <div class="iconos">
+        <a href="#" id="papelera">
+            <div class="icono">
+                <img src="assets/img/back.png" width="48px">
+                <p>Papelera de reciclaje</p>
+            </div>
+        </a>
+        <a href="#" id="home">
+            <div class="icono">
+                <img src="assets/img/home.png" width="48px"><br>
+                <p>Inicio</p>
+            </div>
+        </a>
+        <a href="#" id="repositorios">
+            <div class="icono">
+                <img src="assets/img/folder.png" width="38px">
+                <p>Repositorios</p>
+            </div>
+        </a>
+        <a href="#" id="webamp_launcher">
+            <div class="icono">
+                <img src="assets/img/winamp.png" width="48px">
+                <p>Webamp</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="container">
+        <div class="window" id="ventana_home">
+            <div class="title-bar" id="drag_home">
+                <div class="title-bar-text">Ventana de Bienvenida</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize" id="minimizar_ventana_home"></button>
+                    <button aria-label="Maximize" id="maximizar_ventana_home"></button>
+                    <button aria-label="Close" id="cerrar_ventana_home"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <div class="logos">
+                    <img class="" src="assets/img/adrianbl.svg" height="30">
+                </div>
+
+                <b>Bienvenido a mi página!</b>
+                <p>Esto es lo que te puedo ofrecer:</p>
+
+                <fieldset style="text-align: center;">
+                    <legend>Redes</legend>
+                    <button>
+                        <a href="https://facebook.com/yosoyadrianbl" target="_blank">Facebook</a>
+                    </button>
+                    <button>
+                        <a href="http://x.com/adrianbl_" target="_blank">X (Twitter)</a>
+                    </button>
+                    <button>
+                        <a href="https://github.com/adrianbl1" target="_blank">GitHub</a>
+                    </button>
+                </fieldset>
+
+                <fieldset style="text-align: center;">
+                    <legend>Contenido</legend>
+                    <button><a href="https://github.com/AdrianBL1?tab=repositories">Repositorios</a></button>
+                    <button><a href="/respaldo/version3_2022">Respaldos</a></button>
+                </fieldset>
+
+                <div class="logos">
+                    <p>
+                        <img src="https://cyber.dabamos.de/88x31/amd_powered.gif">
+                        <a href="https://cyber.dabamos.de/88x31/" target="_blank">
+                            <img src="https://cyber.dabamos.de/88x31/cuteanimegirls.gif">
+                        </a>
+                        <a href="http://https://adrianbl.neocities.org/" target="_blank">
+                            <img src="https://adrianbl.neocities.org/neocities.png" height="30">
+                        </a>
+                    </p>
+                </div>
             </div>
         </div>
-        <div class="window-body">
-            <div class="logos">
-                <p>
-                    <img src="https://user-images.githubusercontent.com/25697365/176805851-c2dd7f91-9d33-430d-9532-695a32fa202a.svg"
-                        height="30">
-                </p>
+
+        <div class="window" id="ventana_repo" style="display: none;">
+            <div class="title-bar" id="drag_repo">
+                <div class="title-bar-text">Repositorios</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize" id="minimizar_ventana_repo"></button>
+                    <button aria-label="Maximize" id="maximizar_ventana_repo"></button>
+                    <button aria-label="Close" id="cerrar_ventana_repo"></button>
+                </div>
             </div>
-
-            <b>Bienvenido a mi página!</b>
-            <p>Esto es lo que te puedo ofrecer:</p>
-
-            <fieldset style="text-align: center;">
-                <legend>Redes</legend>
-                <button>
-                    <a href="https://facebook.com/yosoyadrianbl" target="_blank">Facebook</a>
-                </button>
-                <button>
-                    <a href="http://x.com/adrianbl_" target="_blank">X (Twitter)</a>
-                </button>
-                <button>
-                    <a href="https://github.com/adrianbl1" target="_blank">GitHub</a>
-                </button>
-            </fieldset>
-            <fieldset style="text-align: center;">
-                <legend>Contenido</legend>
-                <button><a href="/desarrolloweb/index.html">Desarrollo Web</a></button>
-                <button><a href="https://github.com/AdrianBL1?tab=repositories">Repositorios</a></button>
-                <button><a href="https://adrianbl1.github.io/respaldo/version3_2022">Respaldos</a></button>
-            </fieldset>
-            <div class="logos">
-                <p>
-                    <img src="https://cyber.dabamos.de/88x31/amd_powered.gif">
-                    <a href="https://cyber.dabamos.de/88x31/" target="_blank">
-                        <img src="https://cyber.dabamos.de/88x31/cuteanimegirls.gif">
-                    </a>
-                    <a href="http://https://adrianbl.neocities.org/" target="_blank">
-                        <img src="https://adrianbl.neocities.org/neocities.png" height="30">
-                    </a>
-                </p>
+            <div class="window-body">
+                <div class="contenido-perfil">
+                    <div class="perfil-avatar" id="avatar"></div>
+                    <div class="perfil-subcontenido">
+                        <div class="perfil-nombre" id="username"></div>
+                        <div class="perfil-bio" id="bio"></div>
+                    </div>
+                </div>
+    
+                <fieldset style="text-align: center;">
+                    <legend>
+                        <strong style="color: purple">✨ Repositorios ✨</strong>
+                    </legend>
+    
+                    <div class="user-list"></div>
+    
+                </fieldset>
             </div>
         </div>
     </div>
+
+    <footer class="win98-footer window">
+        <p>&copy; 2024 Adrian BL</p>
+        <p id="win98_clock">00:00 AM</p>
+    </footer>
 </body>
 
 </html>
