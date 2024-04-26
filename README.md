@@ -11,8 +11,8 @@ Sitio web personal de Adrian BL
 
 <hr>
 <p>
-<img src="https://www.netlify.com/assets/logos/full/small/lightmode/logo-netlify-small-monochrome-lightmode.svg" width="100px"> Despliegue en Netlify: [https://adrianbl.netlify.app](https://adrianbl.netlify.app)
+<img src="https://www.netlify.com/assets/logos/full/small/lightmode/logo-netlify-small-monochrome-lightmode.svg" width="100px"> Despliegue en Netlify: <a href="https://adrianbl.netlify.app">https://adrianbl.netlify.app</a>
 </p>
 <p>
-<img src="https://neocities.org/img/cat.png" width="50px"> Despliegue en Neocities: [https://adrianbl.neocities.org](https://adrianbl.neocities.org)
+<img src="https://neocities.org/img/cat.png" width="50px"> Despliegue en Neocities: <a href="https://adrianbl.neocities.org">https://adrianbl.neocities.org</a>
 </p>
