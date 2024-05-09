@@ -55,7 +55,7 @@ img {
 }
 
 .win98-footer {
-    padding: 10px;
+    /* padding: 10px; */
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -67,7 +67,7 @@ img {
 }
 
 .win98-footer p {
-    margin: 0;
+    margin: 10px;
 }
 
 #win98-clock {

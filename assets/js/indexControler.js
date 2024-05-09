@@ -5,11 +5,11 @@ class indexControler{
 
         this.obtenerDatosUsuario()
         this.obtenerRepositorios()
-
+        this.convertirMDaHTML()
     }
 
     onReadyWebamp(element) {
-        const Webamp = window.Webamp;
+        const Webamp = window.Webamp
         const webamp = new Webamp({
             initialTracks: [
                 {
@@ -41,33 +41,33 @@ class indexControler{
     }
 
     obtenerDatosUsuario() {
-        var request = new XMLHttpRequest();
+        var request = new XMLHttpRequest()
         var search = "adrianbl1"
-        request.open("GET", "https://api.github.com/users/" + search, true);
+        request.open("GET", "https://api.github.com/users/" + search, true)
         request.onload = () => {
             if (request.status >= 200 && request.status < 400) {
-                this.content_user(JSON.parse(request.responseText));
+                this.content_user(JSON.parse(request.responseText))
             } else {
-                console.log("error");
+                console.log("error")
             }
         }
-        console.log("consola" + request.responseText);
-        request.send();
+        console.log("consola" + request.responseText)
+        request.send()
     }
 
     obtenerRepositorios() {
-        var request = new XMLHttpRequest();
+        var request = new XMLHttpRequest()
         var search = "adrianbl1"
-        request.open("GET", "https://api.github.com/users/" + search + "/repos", true);
+        request.open("GET", "https://api.github.com/users/" + search + "/repos", true)
         request.onload = () => {
             if (request.status >= 200 && request.status < 400) {
-                this.show_list(JSON.parse(request.responseText));
+                this.show_list(JSON.parse(request.responseText))
             } else {
-                console.log("error");
+                console.log("error")
             }
         }
-        console.log("consola" + request.responseText);
-        request.send();
+        console.log("consola" + request.responseText)
+        request.send()
     }
 
     content_user(user){
@@ -75,99 +75,117 @@ class indexControler{
         var username = document.getElementById("username")
         var bio = document.getElementById("bio")
 
-        avatar.innerHTML = ` <img src=${user.avatar_url}" alt="avatar"> `;
-        username.innerText = user.name;
-        bio.innerText = user.bio;
+        avatar.innerHTML = ` <img src=${user.avatar_url}" alt="avatar"> `
+        username.innerText = user.name
+        bio.innerText = user.bio
     }
 
     show_list(user) {
-        var userList = document.getElementsByClassName("user-list")[0];
-        var userUl = document.createElement("ul");
+        var userList = document.getElementsByClassName("user-list")[0]
+        var userUl = document.createElement("ul")
 
         for (var i in user) {
-            var userLi = document.createElement("li");
+            var userLi = document.createElement("li")
             userLi.innerHTML = `
                 <a href="${user[i].html_url}">
-                    <img src="assets/img/folder.png" width="10px" alt="github">
+                    <img src="assets/img/windows98-icons/world_network_directories-4.png" width="10px" alt="github">
                     <span>${user[i].name}</span>
                 </a>
-            `;
-            userUl.appendChild(userLi);
+            `
+            userUl.appendChild(userLi)
         }
-        userList.appendChild(userUl);
+        userList.appendChild(userUl)
+    }
+
+    //Convertir MD a HTML
+    convertirMDaHTML(){
+        const url = "https://raw.githubusercontent.com/AdrianBL1/adrianbl1.github.io/master/README.md"
+        const md = fetch(url).then((response) => response.text()).then(text => {
+            const converter = new showdown.Converter()
+            const html = converter.makeHtml(text)
+            vista.md_html.innerHTML = html
+        })
     }
 
     // Update clock
     updateClock() {
-        var now = new Date();
-        var hours = now.getHours();
-        var minutes = now.getMinutes();
-        var ampm = hours < 12 ? 'AM' : 'PM';
+        var now = new Date()
+        var hours = now.getHours()
+        var minutes = now.getMinutes()
+        var ampm = hours < 12 ? 'AM' : 'PM'
 
-        hours = hours % 12;
-        hours = hours ? hours : 12; // handle midnight
-        minutes = minutes < 10 ? '0' + minutes : minutes;
+        hours = hours % 12
+        hours = hours ? hours : 12 // handle midnight
+        minutes = minutes < 10 ? '0' + minutes : minutes
 
-        var timeString = hours + ':' + minutes + ' ' + ampm;
+        var timeString = hours + ':' + minutes + ' ' + ampm
 
-        vista.win98_clock.textContent = timeString;
+        vista.win98_clock.textContent = timeString
     }
 
     dragMouseDown(e) {
         console.log(vista.window)
-        const windowElement = e.target.closest('.window');
+        const windowElement = e.target.closest('.window')
         console.log(vista.window)
         console.log(windowElement)
 
         if (!windowElement) return;
 
-        let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0
 
-        e.preventDefault();
+        e.preventDefault()
         // Obtiene la posición inicial del cursor
-        pos3 = e.clientX;
-        pos4 = e.clientY;
+        pos3 = e.clientX
+        pos4 = e.clientY
 
-        document.onmouseup = closeDragElement;
-        document.onmousemove = elementDrag;
+        document.onmouseup = closeDragElement
+        document.onmousemove = elementDrag
 
         function elementDrag(e) {
-            e.preventDefault();
+            e.preventDefault()
             // Calcula la nueva posición del cursor
-            pos1 = pos3 - e.clientX;
-            pos2 = pos4 - e.clientY;
-            pos3 = e.clientX;
-            pos4 = e.clientY;
+            pos1 = pos3 - e.clientX
+            pos2 = pos4 - e.clientY
+            pos3 = e.clientX
+            pos4 = e.clientY
             // Establece la posición de la ventana
-            windowElement.style.top = (windowElement.offsetTop - pos2) + "px";
-            windowElement.style.left = (windowElement.offsetLeft - pos1) + "px";
+            windowElement.style.top = (windowElement.offsetTop - pos2) + "px"
+            windowElement.style.left = (windowElement.offsetLeft - pos1) + "px"
         }
 
         function closeDragElement() {
             // Detiene el movimiento al soltar el botón del mouse
-            document.onmouseup = null;
-            document.onmousemove = null;
+            document.onmouseup = null
+            document.onmousemove = null
         }
     }
 
     minimizeWindow(windowElement) {
-        windowElement.style.display = "none";
+        windowElement.style.display = "none"
     }
 
     maximizeWindow(windowElement) {
         if (!this.isMaximized) {
-            windowElement.style.top = "0";
-            windowElement.style.left = "0";
-            windowElement.style.width = "100%";
-            windowElement.style.height = "calc(100% - 30px)"; // Height of footer
-            this.isMaximized = true;
+            windowElement.style.top = "0"
+            windowElement.style.left = "0"
+            windowElement.style.width = "100%"
+            windowElement.style.height = "calc(100% - 30px)" // Altura del footer
+            this.isMaximized = true
         } else {
-            // Restore window to its original size
-            windowElement.style.top = "";
-            windowElement.style.left = "";
-            windowElement.style.width = "";
-            windowElement.style.height = "";
-            this.isMaximized = false;
+            // Restaurar la ventana a su tamaño original
+            if (windowElement.id == "ventana_readme"){
+                windowElement.style.top = ""
+                windowElement.style.left = ""
+                windowElement.style.width = "800px"
+                windowElement.style.height = "550px"
+            } else {
+                windowElement.style.top = ""
+                windowElement.style.left = ""
+                windowElement.style.width = ""
+                windowElement.style.height = ""
+            }
+            
+            this.isMaximized = false
         }
     }
 
