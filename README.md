@@ -1,6 +1,23 @@
-![adrianbl](https://user-images.githubusercontent.com/25697365/176805851-c2dd7f91-9d33-430d-9532-695a32fa202a.svg)
+<div align="center" style="
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    ">
+    <img src="https://github.com/AdrianBL1/AdrianBL1/raw/main/img/logo/v1/adrianbl.png" width="30%" style="margin: 10px;"/>
+    <img src="https://github.com/AdrianBL1/AdrianBL1/raw/main/img/logo/v2/adrianbl.png" width="30%" style="margin: 10px;"/>
+</div>
+
+<div align="center">  
+<a href="https://en.wikipedia.org/wiki/HTML5" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/html5-original-wordmark.svg" alt="HTML5" height="50" /></a>  
+<a href="https://www.w3schools.com/css/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/css3-original-wordmark.svg" alt="CSS3" height="50" /></a>  
+<a href="https://www.javascript.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/javascript-original.svg" alt="JavaScript" height="50" /></a>
+</div>
+
+<div align="center">
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c717e1e0-7ce5-4406-adae-bbb56aa3db9f/deploy-status)](https://app.netlify.com/sites/adrianbl/deploys)
+
+</div>
 
 # adrianbl1.github.io
 Sitio web personal de Adrian BL

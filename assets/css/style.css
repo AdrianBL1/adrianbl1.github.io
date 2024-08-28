@@ -1,0 +1,111 @@
+:root {
+    --blanco: #fff;
+    --fondo: #161616;
+}
+
+@font-face {
+    font-family: "digital geometric";
+    src: local("Digital_geometric_bold"), url("assets/fonts/Digital_geometric_bold.ttf") format("truetype");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+body {
+    background-color: var(--fondo);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.titulo {
+    margin-top: 5rem;
+    font-size: 10em;
+    color: var(--blanco);
+    overflow: hidden;
+    margin-left: 115px;
+    font-family: "digital geometric";
+    font-weight: bold;
+}
+
+.titulo .letra {
+    display: inline-block;
+    line-height: 2em;
+    opacity: 0;
+}
+
+.letra:nth-child(1) {
+    text-transform: capitalize;
+}
+
+.subtitulo {
+    position: relative;
+    font-size: 10em;
+    color: var(--blanco);
+    overflow: hidden;
+    margin-left: 609px;
+    margin-top: -185px;
+    font-family: "digital geometric";
+    font-weight: bold;
+    letter-spacing: -7px;
+}
+
+.figura {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 28px solid transparent;
+    border-right: 28px solid transparent;
+    border-bottom: 70px solid aqua;
+    margin-left: 160px;
+    margin-top: -270px;
+}
+
+.menu {
+    position: absolute;
+    bottom: 40%;
+    padding: 0 10px;
+    right: -160px;
+    transform: rotate(-90deg);
+}
+
+.menu ul li {
+    display: inline-block;
+    padding: 10px 25px;
+    color: var(--blanco);
+    cursor: pointer;
+    letter-spacing: 2px;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--blanco);
+}
+
+.menu a:hover {
+   color: gray;
+}
+
+.footer {
+    font-size: 12px;
+    letter-spacing: 3px;
+    position: absolute;
+    color: var(--blanco);
+    bottom: 40px;
+    left: 80px;
+    transform: rotate(-90deg);
+}
+
+.footer::before {
+    content: "";
+    border: 2px solid var(--blanco);
+    width: 50px;
+    margin: 0 20px 0 0;
+    transform: translateY(-2px);
+    opacity: .5;
+    display: inline-block;
+}

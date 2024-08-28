@@ -1,185 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/98.css" />
     <title>Adrian BL</title>
-    <link rel="stylesheet" href="assets/css/estilos.css" type="text/css" media="all">
-    <!-- <link rel="stylesheet" href="assets/css/debug.css"> -->
-    <script src="https://unpkg.com/webamp@1.4.2/built/webamp.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
-    <script src="assets/js/index.js"></script>
-    <script src="assets/js/indexUI.js"></script>
-    <script src="assets/js/indexControler.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 </head>
-
 <body>
-    <div id="app_webamp"></div>
-    <div class="iconos">
-        <a href="#" id="papelera">
-            <div class="icono">
-                <img src="assets/img/windows98-icons/recycle_bin_full-4.png">
-                <p>Papelera de reciclaje</p>
-            </div>
-        </a>
-        <a href="#" id="home">
-            <div class="icono">
-                <img src="assets/img/windows98-icons/computer-4.png"><br>
-                <p>Inicio</p>
-            </div>
-        </a>
-        <a href="#" id="repositorios">
-            <div class="icono">
-                <img src="assets/img/windows98-icons/directory_open_file_mydocs-4.png">
-                <p>Repositorios</p>
-            </div>
-        </a>
-        <a href="#" id="webamp_launcher">
-            <div class="icono">
-                <img src="assets/img/winamp.png" width="48px">
-                <p>Webamp</p>
-            </div>
-        </a>
-        <a href="#" id="readme">
-            <div class="icono">
-                <img src="assets/img/windows98-icons/chm-2.png">
-                <p>Readme</p>
-            </div>
-        </a>
-        <a href="#" id="genshin_web">
-            <div class="icono">
-                <img src="assets/img/genshin.png" width="48px">
-                <p>Genshin Impact</p>
-            </div>
-        </a>
+    <p class="titulo">adrian</p>
+    <p class="subtitulo">bl</p>
+    <div class="figura"></div>
+
+    <div class="menu">
+        <ul>
+            <li><a href="https://github.com/AdrianBL1">github</a></li>
+            <li><a href="https://github.com/AdrianBL1?tab=repositories">proyectos</a></li>
+            <li><a href="https://codepen.io/adrianbl">codepen</a></li>
+            <li><a href="/win98_version/" target="_blank">win98_version</a></li>
+        </ul>
     </div>
 
-    <div class="container">
-        <div class="window" id="ventana_home">
-            <div class="title-bar" id="drag_home">
-                <div class="title-bar-text">Ventana de Bienvenida</div>
-                <div class="title-bar-controls">
-                    <button aria-label="Minimize" id="minimizar_ventana_home"></button>
-                    <button aria-label="Maximize" id="maximizar_ventana_home"></button>
-                    <button aria-label="Close" id="cerrar_ventana_home"></button>
-                </div>
-            </div>
-            <div class="window-body" style="text-align: center;">
-                <div class="logos">
-                    <img class="" src="assets/img/adrianbl.svg" height="30">
-                </div>
+    <div class="footer">adrian bl</div>
 
-                <br>
-
-                <b>Bienvenido a mi página!</b>
-                <p>Esto es lo que te puedo ofrecer:</p>
-
-                <fieldset style="text-align: center;">
-                    <legend>Redes</legend>
-                    <button>
-                        <a href="#">Facebook</a>
-                    </button>
-                    <button>
-                        <a href="#">X (Twitter)</a>
-                    </button>
-                    <button>
-                        <a href="https://github.com/adrianbl1" target="_blank">GitHub</a>
-                    </button>
-                </fieldset>
-
-                <fieldset style="text-align: center;">
-                    <legend>Contenido</legend>
-                    <button><a href="https://github.com/AdrianBL1?tab=repositories">Repositorios</a></button>
-                    <button><a href="/respaldo/version3_2022">Respaldos</a></button>
-                </fieldset>
-
-                <div class="logos">
-                    <p>
-                        <img src="https://cyber.dabamos.de/88x31/amd_powered.gif">
-                        <a href="https://cyber.dabamos.de/88x31/" target="_blank">
-                            <img src="https://cyber.dabamos.de/88x31/cuteanimegirls.gif">
-                        </a>
-                        <a href="https://adrianbl.neocities.org/" target="_blank">
-                            <img src="https://adrianbl.neocities.org/neocities.png" height="30">
-                        </a>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="window" id="ventana_repo" style="display: none;">
-            <div class="title-bar" id="drag_repo">
-                <div class="title-bar-text">Repositorios</div>
-                <div class="title-bar-controls">
-                    <button aria-label="Minimize" id="minimizar_ventana_repo"></button>
-                    <button aria-label="Maximize" id="maximizar_ventana_repo"></button>
-                    <button aria-label="Close" id="cerrar_ventana_repo"></button>
-                </div>
-            </div>
-            <div class="window-body">
-                <div class="contenido-perfil">
-                    <div class="perfil-avatar" id="avatar"></div>
-                    <div class="perfil-subcontenido">
-                        <div class="perfil-nombre" id="username"></div>
-                        <div class="perfil-bio" id="bio"></div>
-                    </div>
-                </div>
-    
-                <fieldset style="text-align: center;">
-                    <legend>
-                        <strong style="color: purple">✨ Repositorios ✨</strong>
-                    </legend>
-    
-                    <div class="user-list"></div>
-    
-                </fieldset>
-
-            </div>
-            <div class="status-bar">
-                <p class="status-bar-field">Total Repo: 00</p>
-                <p class="status-bar-field"><a href="https://github.com/AdrianBL1?tab=repositories" target="_blank">Ver todos los Repositorios</a></p>
-            </div>
-        </div>
-
-        <div class="window" id="ventana_genshin" style="display: none; height: 550px; width: 1010px;">
-            <div class="title-bar" id="drag_genshin">
-                <div class="title-bar-text">Genshin Characters UI</div>
-                <div class="title-bar-controls">
-                    <button aria-label="Minimize" id="minimizar_ventana_genshin"></button>
-                    <button aria-label="Maximize" id="maximizar_ventana_genshin" disabled></button>
-                    <button aria-label="Close" id="cerrar_ventana_genshin"></button>
-                </div>
-            </div>
-            <div class="window-body">
-                <iframe src="https://adrianbl1.github.io/genshin-characters-ui/" title="Genshin Characters UI" height="490px" width="1000px" zoom="0.5">
-                </iframe>
-            </div>
-            <div class="status-bar">
-                <p class="status-bar-field"><a href="https://adrianbl1.github.io/genshin-characters-ui/" target="_blank">Mostrar en una nueva Ventana</a></p>
-            </div>
-        </div>
-
-        <div class="window" id="ventana_readme" style="display: none; height: 550px; width: 800px;">
-            <div class="title-bar" id="drag_readme">
-                <div class="title-bar-text">Readme</div>
-                <div class="title-bar-controls">
-                    <button aria-label="Minimize" id="minimizar_ventana_readme"></button>
-                    <button aria-label="Maximize" id="maximizar_ventana_readme"></button>
-                    <button aria-label="Close" id="cerrar_ventana_readme"></button>
-                </div>
-            </div>
-            <div class="window-body">
-                <div id="md-html"></div>
-            </div>
-        </div>
-    </div>
-
-    <footer class="win98-footer window">
-        <p>&copy; 2024 Adrian BL</p>
-        <p id="win98_clock">00:00 AM</p>
-    </footer>
+    <script src="assets/js/script.js"></script>    
 </body>
-
 </html>
