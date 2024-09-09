@@ -1,6 +1,12 @@
 :root {
-    --blanco: #fff;
+    --color-base: #fff;
     --fondo: #161616;
+}
+
+.light-mode {
+    --color-base: #161616;
+    --fondo: #d3d3d3;
+    transition: 1s;
 }
 
 @font-face {
@@ -20,10 +26,40 @@ body {
     font-family: 'Courier New', Courier, monospace;
 }
 
+#tema-switch {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--fondo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 20px;
+    right: 20px;
+}
+
+#tema-switch svg {
+    fill: var(--color-base);
+}
+
+#tema-switch svg:last-child {
+    display: none;
+}
+
+.light-mode #tema-switch svg:first-child {
+    display: none;
+}
+
+.light-mode #tema-switch svg:last-child {
+    display: block;
+}
+
 .titulo {
     margin-top: 5rem;
     font-size: 10em;
-    color: var(--blanco);
+    color: var(--color-base);
     overflow: hidden;
     margin-left: 115px;
     font-family: "digital geometric";
@@ -43,7 +79,7 @@ body {
 .subtitulo {
     position: relative;
     font-size: 10em;
-    color: var(--blanco);
+    color: var(--color-base);
     overflow: hidden;
     margin-left: 609px;
     margin-top: -185px;
@@ -74,7 +110,7 @@ body {
 .menu ul li {
     display: inline-block;
     padding: 10px 25px;
-    color: var(--blanco);
+    color: var(--color-base);
     cursor: pointer;
     letter-spacing: 2px;
     font-size: 12px;
@@ -83,7 +119,7 @@ body {
 
 .menu a {
     text-decoration: none;
-    color: var(--blanco);
+    color: var(--color-base);
 }
 
 .menu a:hover {
@@ -94,7 +130,7 @@ body {
     font-size: 12px;
     letter-spacing: 3px;
     position: absolute;
-    color: var(--blanco);
+    color: var(--color-base);
     bottom: 40px;
     left: 80px;
     transform: rotate(-90deg);
@@ -102,7 +138,7 @@ body {
 
 .footer::before {
     content: "";
-    border: 2px solid var(--blanco);
+    border: 2px solid var(--color-base);
     width: 50px;
     margin: 0 20px 0 0;
     transform: translateY(-2px);
